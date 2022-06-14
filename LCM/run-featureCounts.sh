@@ -1,28 +1,24 @@
 #!/bin/sh
 SAMPLE=$1
-FEATURE=$2
 
-## STAR-TE-ACMLCM1-helitron/Aligned.sortedByCoord.out.bam
-## STAR-TE-ACMLCM1-helitron/mate1Aligned.sortedByCoord.out.bam
-## STAR-TE-ACMLCM1-helitron/mate2Aligned.sortedByCoord.out.bam
+## STAR-ACMLCM1/Aligned.sortedByCoord.out.bam
+## STAR-ACMLCM1/mate1Aligned.sortedByCoord.out.bam
+## STAR-ACMLCM1/mate2Aligned.sortedByCoord.out.bam
 
-DIR=STAR-TE-${SAMPLE}-${FEATURE}
+DIR=STAR-${SAMPLE}
 
-featureCounts -p -M --fraction --countReadPairs -F GTF -g Name \
-              -a ../Zm-B73-REFERENCE-GRAMENE-4.0/Zm-B73-REFERENCE-GRAMENE-4.0.TEs.1.0.gff3 \
-              -t $FEATURE \
-              -o $SAMPLE.Aligned \
+featureCounts -p -M --fraction --countReadPairs -g Name -t transposable_element \
+              -a Zm-B73-REFERENCE-GRAMENE-4.0.TEs.1.0.gff3 \
+              -o $DIR/$SAMPLE.Aligned.TE.counts \
               $DIR/Aligned.sortedByCoord.out.bam
 
-featureCounts -M --fraction --countReadPairs -F GTF -g Name \
-              -a ../Zm-B73-REFERENCE-GRAMENE-4.0/Zm-B73-REFERENCE-GRAMENE-4.0.TEs.1.0.gff3 \
-              -t $FEATURE \
-              -o $SAMPLE.mate1 \
+featureCounts -M --fraction --countReadPairs -g Name -t transposable_element \
+              -a Zm-B73-REFERENCE-GRAMENE-4.0.TEs.1.0.gff3 \
+              -o $DIR/$SAMPLE.mate1.TE.counts \
               $DIR/mate1Aligned.sortedByCoord.out.bam
 
-featureCounts -M --fraction --countReadPairs -F GTF -g Name \
-              -a ../Zm-B73-REFERENCE-GRAMENE-4.0/Zm-B73-REFERENCE-GRAMENE-4.0.TEs.1.0.gff3 \
-              -t $FEATURE \
-              -o $SAMPLE.mate2 \
+featureCounts -M --fraction --countReadPairs -g Name -t transposable_element \
+              -a Zm-B73-REFERENCE-GRAMENE-4.0.TEs.1.0.gff3 \
+              -o $DIR/$SAMPLE.mate2.TE.counts \
               $DIR/mate2Aligned.sortedByCoord.out.bam
 
