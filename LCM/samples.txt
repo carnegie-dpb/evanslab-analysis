@@ -1,0 +1,24 @@
+ACMLCM1		whole embryo sac1
+ACMLCM2		whole embryo sac2
+ACMLCM3		whole embryo sac3
+ACMLCM4		whole embryo sac4
+ACMLCM5		antipodal cell cluster1
+ACMLCM6		antipodal cell cluster2
+ACMLCM7		antipodal cell cluster3
+ACMLCM8		antipodal cell cluster4
+ACMLCM9		central cell1
+ACMLCM10	central cell2
+ACMLCM11	central cell3
+ACMLCM12	central cell4
+ACMLCM13	egg apparatus1
+ACMLCM14	egg apparatus2
+ACMLCM15	egg apparatus3
+ACMLCM16	egg apparatus4
+ACMLCM17	nucellus1
+ACMLCM18	nucellus2
+ACMLCM19	nucellus3
+ACMLCM20	nucellus4
+ACMLCM21	pericarp1
+ACMLCM22	pericarp2
+ACMLCM23	pericarp3
+ACMLCM24	pericarp4
